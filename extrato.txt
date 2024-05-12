@@ -1,0 +1,4 @@
+Depositou: 900 
+Depositou: 400 
+Depositou: 700 
+Sacou: 100 

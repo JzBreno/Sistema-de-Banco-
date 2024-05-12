@@ -13,24 +13,19 @@ print("Bem vindo ao banco")
 
 
 while True:
-    menu = int(input("""
-[1] - Saldo
-[2] - Depósitar
-[3] - Extrato
-[4] - Sacar
-[5] - Sair
-"""))
-
+    
+    menu = defs.Menu()
+    
     if menu > 0 and 6 > menu:
         match menu:
             case 1:
-                Saldo(saldo)
+                defs.Saldo(saldo)
             case 2:
-                saldo = Depositar(saldo)
+                saldo = defs.Depositar(saldo)
             case 3:
-                Extrato(extratosaque)
+                defs.Extrato(extratosaque)
             case 4:
-                saldo, limitesaques, extratosaque = Saque(
+                saldo, limitesaques, extratosaque = defs.Saque(
                     saldo, limitesaques, extratosaque)
             case 5:
                 break
@@ -39,3 +34,8 @@ while True:
         print("DIGITE UM NUMERO QUE TENHA FUNCIONALIDADE")
     sleep(3)
     os.system("cls")
+
+with open("extrato.txt", "r", encoding="utf-8") as arquivo:
+    texto = arquivo.readlines()
+    for i in texto:
+        print(i)
